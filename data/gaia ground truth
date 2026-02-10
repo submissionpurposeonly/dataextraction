@@ -1,0 +1,1102 @@
+[
+  {
+    "trajectory_id": "GPT-4o_001_memory_b000_t00_e00-7743eba0",
+    "LLM": "GPT-4o",
+    "task_type": "gaia",
+    "critical_failure_step": 5,
+    "critical_failure_module": "planning",
+    "step_annotations": [
+      {
+        "step": 5,
+        "planning": {
+          "failure_type": "inefficient_plan",
+          "reasoning": "Inefficient plan by redo similar stuffs"
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Planning",
+      "layer_2_exception": "Overextended Planning",
+      "error_phase": "RP",
+      "analysis": "The agent is repeatedly using Google Search with slightly modified queries, but failing to extract the necessary information to identify the racetrack. This indicates an inefficient plan where the agent is redoing similar steps without making significant progress, suggesting an overextended planning issue."
+    }
+  },
+  {
+    "trajectory_id": "GPT-4o_002_memory_b000_t00_e01-7ab08a46",
+    "LLM": "GPT-4o",
+    "task_type": "gaia",
+    "critical_failure_step": 3,
+    "critical_failure_module": "action",
+    "step_annotations": [
+      {
+        "step": 3,
+        "action": {
+          "failure_type": "misalignment",
+          "reasoning": "the action taken was to use the 'wikipedia_knowledge_searcher' tool, which does not access the Tropicos database "
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Tool",
+      "layer_2_exception": "Tool Invocation Exception",
+      "error_phase": "E",
+      "analysis": "The agent planned to use the 'wikipedia_knowledge_searcher' tool to find the Tropicos ID, but this tool is not designed to directly access or query the Tropicos database. The tool was invoked, but it was the wrong tool for the task, leading to a failure in obtaining the required information."
+    }
+  },
+  {
+    "trajectory_id": "GPT-4o_003_memory_b000_t00_e03-21a3a421",
+    "LLM": "GPT-4o",
+    "task_type": "gaia",
+    "critical_failure_step": 3,
+    "critical_failure_module": "planning",
+    "step_annotations": [
+      {
+        "step": 3,
+        "planning": {
+          "failure_type": "inefficient_plan",
+          "reasoning": "Inefficient plan by redo similar stuffs"
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Planning",
+      "layer_2_exception": "Faulty Task Structuring",
+      "error_phase": "RP",
+      "analysis": "The agent's plan is inefficient because it directly translates the English sentence structure into Tizin without considering the language's specific rules. The agent should have focused on the Tizin sentence structure (Verb-Direct Object-Subject) from the beginning, rather than simply listing the English components and then translating. This indicates a failure in properly structuring the task of translation according to the target language's grammar."
+    }
+  },
+  {
+    "trajectory_id": "GPT-4o_004_memory_b000_t00_e04-5e8c1dcf",
+    "LLM": "GPT-4o",
+    "task_type": "gaia",
+    "critical_failure_step": 1,
+    "critical_failure_module": "planning",
+    "step_annotations": [
+      {
+        "step": 1,
+        "planning": {
+          "failure_type": "constraint_ignorance",
+          "reasoning": "constraint_ignorance by not including all required elements"
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Planning",
+      "layer_2_exception": "Faulty Task Structuring",
+      "error_phase": "RP",
+      "analysis": "The agent failed to correctly structure the task of checking for commutativity. It missed some pairs and incorrectly identified others as commutative, leading to an incorrect subset of S. The constraint of checking all pairs (x, y) and (y, x) was not fully adhered to, indicating a failure in structuring the task properly."
+    }
+  },
+  {
+    "trajectory_id": "GPT-4o_005_memory_b000_t00_e05-c9015705",
+    "LLM": "GPT-4o",
+    "task_type": "gaia",
+    "critical_failure_step": 1,
+    "critical_failure_module": "planning",
+    "step_annotations": [
+      {
+        "step": 1,
+        "planning": {
+          "failure_type": "inefficient_plan",
+          "reasoning": "Inefficient plan by starting with a bad query"
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Planning",
+      "layer_2_exception": "Faulty Task Structuring",
+      "error_phase": "RP",
+      "analysis": "The agent initially attempted to use Wikipedia to find the minimum perigee distance, but the query was too broad and returned irrelevant results. This indicates a failure in structuring the task effectively, as the initial query was not specific enough to retrieve the desired information. The agent should have used a more precise query or considered alternative tools from the beginning."
+    }
+  },
+  {
+    "trajectory_id": "GPT-4o_006_memory_b000_t00_e06-71f77595",
+    "LLM": "GPT-4o",
+    "task_type": "gaia",
+    "critical_failure_step": 3,
+    "critical_failure_module": "memory",
+    "step_annotations": [
+      {
+        "step": 3,
+        "memory": {
+          "failure_type": "over_simplification",
+          "reasoning": "At step 3, the memory module summarized the outcome of the world box office URL extraction as 'The top 10 highest-grossing worldwide movies were identified,' but did not actually store or enumerate the extracted movie titles or any details from the data."
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Memory",
+      "layer_2_exception": "Outdated Memory",
+      "error_phase": "RP",
+      "analysis": "The agent failed to retain the extracted movie titles from the worldwide box office list, indicating an issue with memory retention. While the agent summarized the outcome of the URL extraction, it did not store the actual data, leading to an 'Outdated Memory' issue where the information was not properly maintained for later use."
+    }
+  },
+  {
+    "trajectory_id": "GPT-4o_007_memory_b000_t00_e08-f572f2ad",
+    "LLM": "GPT-4o",
+    "task_type": "gaia",
+    "critical_failure_step": 2,
+    "critical_failure_module": "memory",
+    "step_annotations": [
+      {
+        "step": 2,
+        "memory": {
+          "failure_type": "over_simplification",
+          "reasoning": "At step 2, the memory module grossly oversimplified the search results by summarizing them as providing no significant progress or direct content"
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Memory",
+      "layer_2_exception": "Outdated Memory",
+      "error_phase": "RP",
+      "analysis": "The agent is using search results from previous steps that are not leading to the correct answer. The agent is stuck in a loop of refining the search query without actually analyzing the content of the articles found. The memory of the previous search results is influencing the current action, even though those results were not helpful."
+    }
+  },
+  {
+    "trajectory_id": "GPT-4o_008_memory_b000_t00_e09-f0557a9f",
+    "LLM": "GPT-4o",
+    "task_type": "gaia",
+    "critical_failure_step": 5,
+    "critical_failure_module": "planning",
+    "step_annotations": [
+      {
+        "step": 5,
+        "planning": {
+          "failure_type": "impossible_action",
+          "reasoning": "At step 5, the planning module proposed using the arxiv_paper_searcher or pubmed_search tool to find information about a DDC 633 article with a unique flag at Bielefeld University Library's BASE. "
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Planning",
+      "layer_2_exception": "Faulty Task Structuring",
+      "error_phase": "RP",
+      "analysis": "The agent is failing to structure the task effectively. It keeps using google_search with similar queries that don't provide the needed information. The agent should have tried a different approach after the first few failed attempts. The agent is not decomposing the task into smaller, more manageable subtasks or exploring alternative resources."
+    }
+  },
+  {
+    "trajectory_id": "GPT-4o_009_memory_b001_t00_e01-7ab08a46",
+    "LLM": "GPT-4o",
+    "task_type": "gaia",
+    "critical_failure_step": 8,
+    "critical_failure_module": "planning",
+    "step_annotations": [
+      {
+        "step": 8,
+        "planning": {
+          "failure_type": "inefficient_plan",
+          "reasoning": "Inefficient plan by redo similar stuffs"
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Planning",
+      "layer_2_exception": "Overextended Planning",
+      "error_phase": "RP",
+      "analysis": "The agent is stuck in a loop of trying the same approaches (Google Search, URL extraction) to access the paper, without success. It's repeatedly encountering 403 errors and failing to find the paper on academic databases. This indicates an overextended planning issue where the agent is not adapting its strategy effectively and is repeating unproductive steps."
+    }
+  },
+  {
+    "trajectory_id": "GPT-4o_010_memory_b001_t00_e02-8d639e26",
+    "LLM": "GPT-4o",
+    "task_type": "gaia",
+    "critical_failure_step": 4,
+    "critical_failure_module": "planning",
+    "step_annotations": [
+      {
+        "step": 4,
+        "planning": {
+          "failure_type": "impossible_action",
+          "reasoning": "At step 4, the planning module made the critical error of assuming it could extract or access the transcript or narration from a YouTube video using available tools"
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Planning",
+      "layer_2_exception": "Faulty Task Structuring",
+      "error_phase": "RP",
+      "analysis": "The agent repeatedly attempts to use Google Search and URL Text Extractor to find the transcript of the YouTube video. The agent fails to recognize that these tools are not effectively retrieving the information needed to answer the question. The agent is stuck in a loop of searching for the transcript without considering alternative strategies or tools. The planning module made the critical error of assuming it could extract or access the transcript or narration from a YouTube video using available tools."
+    }
+  },
+  {
+    "trajectory_id": "GPT-4o_011_memory_b001_t00_e03-21a3a421",
+    "LLM": "GPT-4o",
+    "task_type": "gaia",
+    "critical_failure_step": 3,
+    "critical_failure_module": "memory",
+    "step_annotations": [
+      {
+        "step": 3,
+        "memory": {
+          "failure_type": "over_simplification",
+          "reasoning": "Don't give enough details"
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Memory",
+      "layer_2_exception": "Outdated Memory",
+      "error_phase": "RP",
+      "analysis": "The agent is failing to recall the number of men with tertiary education from the 2011 Bulgarian census. It has already searched for this information multiple times, suggesting that the initial search results, or the way the information was processed and stored, are not leading to the correct answer. The agent is stuck in a loop of searching without finding the necessary data, indicating that the memory of previous searches and their (lack of) results is not being effectively used to adjust the search strategy or explore alternative sources. The agent is not retaining enough details from previous steps."
+    }
+  },
+  {
+    "trajectory_id": "GPT-4o_012_memory_b001_t00_e04-5e8c1dcf",
+    "LLM": "GPT-4o",
+    "task_type": "gaia",
+    "critical_failure_step": 5,
+    "critical_failure_module": "action",
+    "step_annotations": [
+      {
+        "step": 5,
+        "action": {
+          "failure_type": "Parameter_error",
+          "reasoning": "Search an non-sensical query"
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Tool",
+      "layer_2_exception": "Tool Output Exception",
+      "error_phase": "E",
+      "analysis": "The agent is searching for a specific quote within a document. The tool (google search) is successfully invoked, but the results are not providing the full text of the document needed to verify the quote. The search results are structurally valid but semantically misaligned with the agent's intent, as they do not contain the full text of the article on pages 45-46."
+    }
+  },
+  {
+    "trajectory_id": "GPT-4o_013_memory_b001_t00_e05-c9015705",
+    "LLM": "GPT-4o",
+    "task_type": "gaia",
+    "critical_failure_step": 5,
+    "critical_failure_module": "action",
+    "step_annotations": [
+      {
+        "step": 5,
+        "action": {
+          "failure_type": "parameter_error",
+          "reasoning": "wrong number input"
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Tool",
+      "layer_2_exception": "Tool Invocation Exception",
+      "error_phase": "E",
+      "analysis": "The agent used the python_code_generator tool, but the input query was not correctly formatted, leading to an incorrect conversion. The agent asked to convert the Babylonian number with symbols \\ud809\\udc1c (8), \\ud809\\udc10 (50), and \\ud809\\udc1a (2) in base-60 to a decimal number. The tool returned 10208, which is incorrect. This indicates an issue with how the tool was invoked or how it interpreted the input."
+    }
+  },
+  {
+    "trajectory_id": "GPT-4o_014_memory_b001_t00_e06-71f77595",
+    "LLM": "GPT-4o",
+    "task_type": "gaia",
+    "critical_failure_step": 7,
+    "critical_failure_module": "planning",
+    "step_annotations": [
+      {
+        "step": 7,
+        "planning": {
+          "failure_type": "inefficient_plan",
+          "reasoning": "Inefficient plan by redo similar stuffs"
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Planning",
+      "layer_2_exception": "Overextended Planning",
+      "error_phase": "RP",
+      "analysis": "The agent is repeatedly using the same tools and queries without making significant progress towards finding the date when the \"Regression\" label was added to the oldest closed numpy.polynomial issue. The agent is stuck in a loop of searching and extracting text, indicating an inefficient plan that is being overextended."
+    }
+  },
+  {
+    "trajectory_id": "GPT-4o_015_memory_b001_t00_e07-f5b5d66a",
+    "LLM": "GPT-4o",
+    "task_type": "gaia",
+    "critical_failure_step": 4,
+    "critical_failure_module": "reflection",
+    "step_annotations": [
+      {
+        "step": 4,
+        "reflection": {
+          "failure_type": "outcome_misinterpretation",
+          "reasoning": "misinterpretation of the result as it was successful"
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Reasoning",
+      "layer_2_exception": "Ambiguous Goal",
+      "error_phase": "RP",
+      "analysis": "The agent is repeatedly attempting to access Pietro Murano's Google Scholar profile despite encountering a 'Too Many Requests' error. This indicates a circular reasoning pattern where the agent is not adapting its approach based on previous failures. The agent should recognize the rate limit issue and explore alternative methods for finding Pietro Murano's publication history instead of retrying the same action."
+    }
+  },
+  {
+    "trajectory_id": "GPT-4o_016_memory_b001_t00_e08-f572f2ad",
+    "LLM": "GPT-4o",
+    "task_type": "gaia",
+    "critical_failure_step": 2,
+    "critical_failure_module": "planning",
+    "step_annotations": [
+      {
+        "step": 2,
+        "planning": {
+          "failure_type": "inefficient_plan",
+          "reasoning": "Inefficient plan that won't help"
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Planning",
+      "layer_2_exception": "Faulty Task Structuring",
+      "error_phase": "RP",
+      "analysis": "The agent is failing to decompose the task into a sequence of subtasks that will lead to the answer. It is repeatedly searching for the same information without adjusting its approach or considering alternative strategies. The initial plan was to find the first National Geographic short on YouTube and then identify \"#9\" within that video, but the agent is stuck on the first step and not making progress."
+    }
+  },
+  {
+    "trajectory_id": "Llama3.3-70B-Turbo_001_memory_b000_t00_e00-7743eba0",
+    "LLM": "Llama3.3-70B-Turbo",
+    "task_type": "gaia",
+    "critical_failure_step": 6,
+    "critical_failure_module": "planning",
+    "step_annotations": [
+      {
+        "step": 6,
+        "planning": {
+          "failure_type": "inefficient_plan",
+          "reasoning": "Make an low efficient plan that not success, repeat the similar action that not success"
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Planning",
+      "layer_2_exception": "Overextended Planning",
+      "error_phase": "RP",
+      "analysis": "The agent is repeatedly using the same tools and queries without making progress towards identifying the track or its world record time. This indicates an inefficient and repetitive planning process, characteristic of 'Overextended Planning'."
+    }
+  },
+  {
+    "trajectory_id": "Llama3.3-70B-Turbo_002_memory_b000_t00_e01-7ab08a46",
+    "LLM": "Llama3.3-70B-Turbo",
+    "task_type": "gaia",
+    "critical_failure_step": 10,
+    "critical_failure_module": "planning",
+    "step_annotations": [
+      {
+        "step": 10,
+        "planning": {
+          "failure_type": "inefficient_plan",
+          "reasoning": "Make an low efficient plan that not success, to do a not so relevant task"
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Planning",
+      "layer_2_exception": "Overextended Planning",
+      "error_phase": "RP",
+      "analysis": "The agent is stuck in a loop, repeatedly trying the same tools and queries without success in finding the Tropicos ID. This indicates an inefficient and overextended planning process, as the agent is not adapting its strategy effectively."
+    }
+  },
+  {
+    "trajectory_id": "Llama3.3-70B-Turbo_003_memory_b000_t00_e02-8d639e26",
+    "LLM": "Llama3.3-70B-Turbo",
+    "task_type": "gaia",
+    "critical_failure_step": 2,
+    "critical_failure_module": "action",
+    "step_annotations": [
+      {
+        "step": 2,
+        "action": {
+          "failure_type": "misalignment",
+          "reasoning": "At step 2, the agent's plan was to find and access the first episode of Game Grumps' Sonic the Hedgehog (2006) Let's Play on YouTube to discover the on-screen phrase. However, the action taken was to extract text from the URL 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', which is unrelated (Rick Astley's 'Never Gonna Give You Up'). "
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Reasoning",
+      "layer_2_exception": "Circular or Invalid Reasoning",
+      "error_phase": "RP",
+      "analysis": "The agent intended to find the Game Grumps episode to identify a specific on-screen phrase. However, it invoked the `url_text_extractor` tool with the URL of Rick Astley's 'Never Gonna Give You Up' instead of the actual Game Grumps episode. This indicates an error in planning or forming the tool invocation, specifically a semantic mismatch between the intended action (finding the Game Grumps episode) and the actual tool invocation (extracting text from an unrelated URL)."
+    }
+  },
+  {
+    "trajectory_id": "Llama3.3-70B-Turbo_004_memory_b000_t00_e03-21a3a421",
+    "LLM": "Llama3.3-70B-Turbo",
+    "task_type": "gaia",
+    "critical_failure_step": 1,
+    "critical_failure_module": "planning",
+    "step_annotations": [
+      {
+        "step": 1,
+        "planning": {
+          "failure_type": "constraint_ignorance",
+          "reasoning": "Not enough reasoning based on the constraint"
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Planning",
+      "layer_2_exception": "Faulty Task Structuring",
+      "error_phase": "RP",
+      "analysis": "The agent correctly identified the components needed for the translation (verb, object, subject) and their corresponding Tizin words. However, the reasoning about the grammatical structure and the use of nominative vs. accusative forms seems flawed, leading to a potentially incorrect translation. The error lies in the initial planning and structuring of how to apply the given grammatical rules to construct the sentence, indicating a 'Faulty Task Structuring' issue."
+    }
+  },
+  {
+    "trajectory_id": "Llama3.3-70B-Turbo_005_memory_b000_t00_e04-5e8c1dcf",
+    "LLM": "Llama3.3-70B-Turbo",
+    "task_type": "gaia",
+    "critical_failure_step": 1,
+    "critical_failure_module": "system",
+    "step_annotations": [
+      {
+        "step": 1,
+        "system": {
+          "failure_type": "tool_execution_error ",
+          "reasoning": "error calling tool "
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Tool",
+      "layer_2_exception": "Tool Invocation Exception",
+      "error_phase": "E",
+      "analysis": "The error message \"Error executing tool 'python_code_generator': Error code: 400 - {'error': {'message': 'invalid model ID', 'type': 'invalid_request_error', 'param': None, 'code': None}}\" indicates that the agent incorrectly planned or formatted the tool invocation. The 'invalid model ID' suggests a problem with how the tool was called, rather than a problem with the tool itself or the environment."
+    }
+  },
+  {
+    "trajectory_id": "Llama3.3-70B-Turbo_006_memory_b000_t00_e05-c9015705",
+    "LLM": "Llama3.3-70B-Turbo",
+    "task_type": "gaia",
+    "critical_failure_step": 6,
+    "critical_failure_module": "reflection",
+    "step_annotations": [
+      {
+        "step": 6,
+        "reflection": {
+          "failure_type": "progress_misjudge",
+          "reasoning": "progress_misjudge by claiming that the agent has completed the task goal"
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Task Flow",
+      "layer_2_exception": "Stopping Too Early",
+      "error_phase": "RP",
+      "analysis": "The agent repeatedly attempts to use the `python_code_generator` tool with the same query, despite receiving an error indicating an invalid model ID. The agent does not attempt to troubleshoot the error or find an alternative method to perform the calculation, indicating that the agent is stopping too early without exploring other options."
+    }
+  },
+  {
+    "trajectory_id": "Llama3.3-70B-Turbo_007_memory_b000_t00_e08-f572f2ad",
+    "LLM": "Llama3.3-70B-Turbo",
+    "task_type": "gaia",
+    "critical_failure_step": 1,
+    "critical_failure_module": "action",
+    "step_annotations": [
+      {
+        "step": 1,
+        "action": {
+          "failure_type": "parameter_error",
+          "reasoning": "Parameter error when calling tool"
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Tool",
+      "layer_2_exception": "Tool Invocation Exception",
+      "error_phase": "E",
+      "analysis": "The error message \"Error executing tool 'arxiv_paper_searcher': unsupported operand type(s) for -: 'int' and 'str'\" indicates that there was a parameter error when calling the tool. Specifically, the tool likely expected a numerical value for a parameter but received a string, or vice versa. This falls under the category of 'Tool Invocation Exception' because the agent incorrectly formatted the tool invocation due to a type mismatch in the parameters."
+    }
+  },
+  {
+    "trajectory_id": "Llama3.3-70B-Turbo_008_memory_b000_t00_e09-f0557a9f",
+    "LLM": "Llama3.3-70B-Turbo",
+    "task_type": "gaia",
+    "critical_failure_step": 7,
+    "critical_failure_module": "planning",
+    "step_annotations": [
+      {
+        "step": 7,
+        "planning": {
+          "failure_type": "impossible_action",
+          "reasoning": "impossible_action by using the arxiv_paper_searcher tool to look for information about Bielefeld University Library's catalog system or how they handle articles under DDC 633."
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Planning",
+      "layer_2_exception": "Faulty Task Structuring",
+      "error_phase": "RP",
+      "analysis": "The agent is attempting to find information about a very specific article within the Bielefeld University Library's BASE system. It has repeatedly used Google and Wikipedia search to find information about DDC 633 and the library's catalog system. The error arises because the agent is trying to find information about the library's catalog system using the arxiv_paper_searcher tool, which is not designed for this purpose. This indicates a failure in structuring the task appropriately, as the agent is using an inappropriate tool for the task at hand. The agent should be using google_search or url_text_extractor to find information about the library's catalog system."
+    }
+  },
+  {
+    "trajectory_id": "Llama3.3-70B-Turbo_009_memory_b001_t00_e00-7743eba0",
+    "LLM": "Llama3.3-70B-Turbo",
+    "task_type": "gaia",
+    "critical_failure_step": 4,
+    "critical_failure_module": "memory",
+    "step_annotations": [
+      {
+        "step": 4,
+        "memory": {
+          "failure_type": "hallucination",
+          "reasoning": "hallucination by asserting that 'Tom Ridge, the first U.S. Secretary of Homeland Security, received his bachelor's degree from the University of Maryland UMBC.'"
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Knowledge Base",
+      "layer_2_exception": "Hallucinated Facts",
+      "error_phase": "RP",
+      "analysis": "Mapped via hard-coded keyword rule."
+    }
+  },
+  {
+    "trajectory_id": "Llama3.3-70B-Turbo_010_memory_b001_t00_e01-7ab08a46",
+    "LLM": "Llama3.3-70B-Turbo",
+    "task_type": "gaia",
+    "critical_failure_step": 2,
+    "critical_failure_module": "memory",
+    "step_annotations": [
+      {
+        "step": 2,
+        "memory": {
+          "failure_type": "over_simplification",
+          "reasoning": "At step 2, the memory module over-simplified the context of the result"
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Memory",
+      "layer_2_exception": "Outdated Memory",
+      "error_phase": "RP",
+      "analysis": "The agent is failing to retrieve the correct context from its memory. The search results from the previous steps contain the answer, but the agent is not using that information to answer the question. The agent is over-simplifying the context of the result, which is causing it to fail to retrieve the correct information."
+    }
+  },
+  {
+    "trajectory_id": "Llama3.3-70B-Turbo_011_memory_b001_t00_e02-8d639e26",
+    "LLM": "Llama3.3-70B-Turbo",
+    "task_type": "gaia",
+    "critical_failure_step": 3,
+    "critical_failure_module": "planning",
+    "step_annotations": [
+      {
+        "step": 3,
+        "planning": {
+          "failure_type": "inefficient_plan",
+          "reasoning": "Inefficient plan by redo similar stuffs"
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Planning",
+      "layer_2_exception": "Overextended Planning",
+      "error_phase": "RP",
+      "analysis": "The agent is repeatedly using the google_search tool with slightly modified queries, but it is not making progress towards finding the specific information needed. This indicates an inefficient plan where the agent is redoing similar steps without achieving the goal, which aligns with the definition of \"Overextended Planning\"."
+    }
+  },
+  {
+    "trajectory_id": "Llama3.3-70B-Turbo_012_memory_b001_t00_e03-21a3a421",
+    "LLM": "Llama3.3-70B-Turbo",
+    "task_type": "gaia",
+    "critical_failure_step": 4,
+    "critical_failure_module": "reflection",
+    "step_annotations": [
+      {
+        "step": 4,
+        "reflection": {
+          "failure_type": "outcome_misinterpretation",
+          "reasoning": "Misinterpretation of the outcome"
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Reasoning",
+      "layer_2_exception": "Circular or Invalid Reasoning ",
+      "error_phase": "RP",
+      "analysis": "The agent is misinterpreting the outcome of the google search. While the search results do not directly provide the numbers, the first result's snippet contains the number of women with tertiary education. The agent fails to extract and utilize this information, indicating a misinterpretation of the search outcome."
+    }
+  },
+  {
+    "trajectory_id": "Llama3.3-70B-Turbo_013_memory_b001_t00_e04-5e8c1dcf",
+    "LLM": "Llama3.3-70B-Turbo",
+    "task_type": "gaia",
+    "critical_failure_step": 2,
+    "critical_failure_module": "reflection",
+    "step_annotations": [
+      {
+        "step": 2,
+        "reflection": {
+          "failure_type": "progress_misjudge",
+          "reasoning": "Progress_misjudge by claiming that the agent has completed the task goal"
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Task Flow",
+      "layer_2_exception": "Stopping Too Early",
+      "error_phase": "RP",
+      "analysis": "The agent prematurely concluded the task by answering \"No\" after only one search. The task requires verifying a citation, and while the initial search provided some context, it didn't definitively confirm or deny the citation's accuracy. The agent should have continued searching or used other available tools (like url_text_extractor if a promising URL was found) to locate the original article and verify the quote's presence on the specified pages. The agent stopped before exhausting reasonable avenues for verification."
+    }
+  },
+  {
+    "trajectory_id": "Llama3.3-70B-Turbo_014_memory_b001_t00_e05-c9015705",
+    "LLM": "Llama3.3-70B-Turbo",
+    "task_type": "gaia",
+    "critical_failure_step": 4,
+    "critical_failure_module": "system",
+    "step_annotations": [
+      {
+        "step": 4,
+        "system": {
+          "failure_type": "tool_execution_error",
+          "reasoning": "impossible_action by using the python_code_generator tool for manual arithmetic"
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Tool",
+      "layer_2_exception": "Tool Invocation Exception",
+      "error_phase": "E",
+      "analysis": "The python_code_generator tool failed to execute due to an 'invalid model ID' error. This indicates an issue with the tool's configuration or the way it was invoked, rather than a problem with the agent's planning or reasoning. The agent planned to use the tool for arithmetic, but the tool itself failed, making it a Tool Invocation Exception."
+    }
+  },
+  {
+    "trajectory_id": "Llama3.3-70B-Turbo_015_memory_b001_t00_e06-71f77595",
+    "LLM": "Llama3.3-70B-Turbo",
+    "task_type": "gaia",
+    "critical_failure_step": 1,
+    "critical_failure_module": "action",
+    "step_annotations": [
+      {
+        "step": 1,
+        "action": {
+          "failure_type": "misalignment",
+          "reasoning": "Hallucination by using the url_text_extractor tool on a GitHub issues search URL"
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Knowledge Base",
+      "layer_2_exception": "Hallucinated Facts",
+      "error_phase": "RP",
+      "analysis": "Mapped via hard-coded keyword rule."
+    }
+  },
+  {
+    "trajectory_id": "Llama3.3-70B-Turbo_016_memory_b001_t00_e07-f5b5d66a",
+    "LLM": "Llama3.3-70B-Turbo",
+    "task_type": "gaia",
+    "critical_failure_step": 8,
+    "critical_failure_module": "planning",
+    "step_annotations": [
+      {
+        "step": 8,
+        "planning": {
+          "failure_type": "inefficient_plan",
+          "reasoning": "Inefficient plan by redo similar stuffs"
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Planning",
+      "layer_2_exception": "Overextended Planning",
+      "error_phase": "RP",
+      "analysis": "The agent is repeatedly using google search to find the first paper by Pietro Murano. It is not making progress and is essentially repeating the same steps with slightly different queries. This indicates an inefficient plan and overextended planning."
+    }
+  },
+  {
+    "trajectory_id": "Llama3.3-70B-Turbo_017_memory_b001_t00_e08-f572f2ad",
+    "LLM": "Llama3.3-70B-Turbo",
+    "task_type": "gaia",
+    "critical_failure_step": 2,
+    "critical_failure_module": "planning",
+    "step_annotations": [
+      {
+        "step": 2,
+        "planning": {
+          "failure_type": "inefficient_plan",
+          "reasoning": "Inefficient plan by redo similar stuffs"
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Planning",
+      "layer_2_exception": "Overextended Planning",
+      "error_phase": "RP",
+      "analysis": "The agent is repeatedly using the google_search tool with slightly different queries but receiving the same result. This indicates an inefficient plan where the agent is redoing similar steps without making progress towards the goal of finding the first National Geographic short on YouTube. The agent is stuck in a loop of searching for the same information without adapting its strategy."
+    }
+  },
+  {
+    "trajectory_id": "Qwen3-8B_001_memory_b000_t00_e00-7743eba0",
+    "LLM": "Qwen3-8B",
+    "task_type": "gaia",
+    "critical_failure_step": 2,
+    "critical_failure_module": "planning",
+    "step_annotations": [
+      {
+        "step": 2,
+        "planning": {
+          "failure_type": "impossible_action",
+          "reasoning": "URL extractor can not extract video content, description, or transcript from a YouTube page, and only returns generic site text. This is an unreasonable parameter choice for the task, as it cannot yield the critical information (track name) needed to proceed. This error ensured that the agent would not be able to identify the specific track, making it impossible to fulfill the user's request for the world record time of that track. All subsequent steps are built on the failure to acquire the track name, leading to speculation, inefficient search, and eventual hallucination."
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Knowledge Base",
+      "layer_2_exception": "Hallucinated Facts",
+      "error_phase": "RP",
+      "analysis": "Mapped via hard-coded keyword rule."
+    }
+  },
+  {
+    "trajectory_id": "Qwen3-8B_002_memory_b000_t00_e01-7ab08a46",
+    "LLM": "Qwen3-8B",
+    "task_type": "gaia",
+    "critical_failure_step": 4,
+    "critical_failure_module": "planning",
+    "step_annotations": [
+      {
+        "step": 4,
+        "planning": {
+          "failure_type": "inefficient_plan",
+          "reasoning": "The agent had not yet exhausted all plausible strategies for finding the Tropicos ID"
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Planning",
+      "layer_2_exception": "Faulty Task Structuring",
+      "error_phase": "RP",
+      "analysis": "The agent is repeatedly using the same search query and getting the same results, indicating a failure to adapt the search strategy or explore alternative methods for finding the Tropicos ID. The agent has not yet exhausted all plausible strategies for finding the Tropicos ID, but it is not structuring the task effectively to find it."
+    }
+  },
+  {
+    "trajectory_id": "Qwen3-8B_003_memory_b000_t00_e02-8d639e26",
+    "LLM": "Qwen3-8B",
+    "task_type": "gaia",
+    "critical_failure_step": 2,
+    "critical_failure_module": "planning",
+    "step_annotations": [
+      {
+        "step": 2,
+        "planning": {
+          "failure_type": "inefficient_plan",
+          "reasoning": "Try extract the url but should not do that"
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Planning",
+      "layer_2_exception": "Faulty Task Structuring",
+      "error_phase": "RP",
+      "analysis": "The agent is trying to extract the phrase from the video using the url_text_extractor, but this tool is not suitable for extracting text directly from a YouTube video. The agent should have recognized that the tool is not appropriate for the task and instead looked for alternative methods, such as searching for transcripts or descriptions of the video. This indicates a failure in structuring the task appropriately, as the chosen tool is not aligned with the desired outcome."
+    }
+  },
+  {
+    "trajectory_id": "Qwen3-8B_004_memory_b000_t00_e04-5e8c1dcf",
+    "LLM": "Qwen3-8B",
+    "task_type": "gaia",
+    "critical_failure_step": 1,
+    "critical_failure_module": "planning",
+    "step_annotations": [
+      {
+        "step": 1,
+        "planning": {
+          "failure_type": "constraint_ignorance",
+          "reasoning": "Not fully satisfy the constraint"
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Planning",
+      "layer_2_exception": "Faulty Task Structuring",
+      "error_phase": "RP",
+      "analysis": "The agent is failing to efficiently structure the task of checking for commutativity. It's performing redundant checks and not prioritizing the most likely candidates for counter-examples, leading to an overextended and inefficient process. The core issue is not a failure to satisfy a constraint directly, but rather a failure to plan the steps in an optimal way to discover the counter-example."
+    }
+  },
+  {
+    "trajectory_id": "Qwen3-8B_005_memory_b000_t00_e05-c9015705",
+    "LLM": "Qwen3-8B",
+    "task_type": "gaia",
+    "critical_failure_step": 3,
+    "critical_failure_module": "planning",
+    "step_annotations": [
+      {
+        "step": 3,
+        "planning": {
+          "failure_type": "inefficient_plan",
+          "reasoning": "Not fully satisfy the constraint"
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Planning",
+      "layer_2_exception": "Faulty Task Structuring",
+      "error_phase": "RP",
+      "analysis": "The agent is failing to efficiently structure the task. It's performing redundant searches for the same information (Moon's perigee distance) and not effectively utilizing the information it already has. This indicates a problem in planning and prioritizing the steps needed to solve the problem, leading to an inefficient approach."
+    }
+  },
+  {
+    "trajectory_id": "Qwen3-8B_006_memory_b000_t00_e06-71f77595",
+    "LLM": "Qwen3-8B",
+    "task_type": "gaia",
+    "critical_failure_step": 1,
+    "critical_failure_module": "system",
+    "step_annotations": [
+      {
+        "step": 1,
+        "system": {
+          "failure_type": "llm_limit",
+          "reasoning": "LLM limit: not follow the instructions but directly give the answer in the last part"
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Model",
+      "layer_2_exception": "Token Limit Exceeded",
+      "error_phase": "RP",
+      "analysis": "The LLM failed to follow instructions and provided the answer directly, indicating it may have exceeded its token limit during the extensive reasoning process. The model attempts to reason through the problem in great detail, which likely led to the token limit being exceeded before it could properly utilize the tools and provide a more reliable answer."
+    }
+  },
+  {
+    "trajectory_id": "Qwen3-8B_007_memory_b000_t00_e07-f5b5d66a",
+    "LLM": "Qwen3-8B",
+    "task_type": "gaia",
+    "critical_failure_step": 2,
+    "critical_failure_module": "planning",
+    "step_annotations": [
+      {
+        "step": 2,
+        "planning": {
+          "failure_type": "inefficient_plan",
+          "reasoning": "Make an low efficient plan that not success"
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Planning",
+      "layer_2_exception": "Faulty Task Structuring",
+      "error_phase": "RP",
+      "analysis": "The agent failed to retrieve the correct information about the ending of the movie Goldfinger. It initially tried Wikipedia, which failed, and then Google Search, but didn't extract the relevant information from the search results to confirm the color of the plane. This indicates a failure in structuring the task effectively to gather the necessary information."
+    }
+  },
+  {
+    "trajectory_id": "Qwen3-8B_008_memory_b000_t00_e08-f572f2ad",
+    "LLM": "Qwen3-8B",
+    "task_type": "gaia",
+    "critical_failure_step": 2,
+    "critical_failure_module": "reflection",
+    "step_annotations": [
+      {
+        "step": 2,
+        "reflection": {
+          "failure_type": "outcome_misinterpretation",
+          "reasoning": "Misinterpret the search results"
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Reasoning",
+      "layer_2_exception": "Circular or Invalid Reasoning ",
+      "error_phase": "RP",
+      "analysis": "The agent misinterprets the search results by not identifying an article that meets the specified criteria (2012, Scientific Reports, no mention of plasmons/plasmonics). The agent continues to search despite the lack of relevant results, indicating a failure to properly assess the information provided by the search tool."
+    }
+  },
+  {
+    "trajectory_id": "Qwen3-8B_009_memory_b000_t00_e09-f0557a9f",
+    "LLM": "Qwen3-8B",
+    "task_type": "gaia",
+    "critical_failure_step": 4,
+    "critical_failure_module": "planning",
+    "step_annotations": [
+      {
+        "step": 4,
+        "planning": {
+          "failure_type": "inefficient_plan",
+          "reasoning": "Repetitive planning that not success"
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Planning",
+      "layer_2_exception": "Overextended Planning",
+      "error_phase": "RP",
+      "analysis": "The legacy error indicates repetitive planning that does not lead to success. This aligns with the definition of \"Overextended Planning\", which describes task plans that become unnecessarily long, repetitive, or low-yield."
+    }
+  },
+  {
+    "trajectory_id": "Qwen3-8B_010_memory_b001_t00_e00-7743eba0",
+    "LLM": "Qwen3-8B",
+    "task_type": "gaia",
+    "critical_failure_step": 1,
+    "critical_failure_module": "planning",
+    "step_annotations": [
+      {
+        "step": 1,
+        "planning": {
+          "failure_type": "constraint_ignorance",
+          "reasoning": "Provide new information that not match the constraint"
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Planning",
+      "layer_2_exception": "Faulty Task Structuring",
+      "error_phase": "RP",
+      "analysis": "The agent's plan involves multiple unnecessary checks and re-verifications of information that should have been established earlier. This indicates a failure to structure the task efficiently, leading to an overextended and repetitive planning process. The agent repeatedly questions its own assumptions and re-verifies information, suggesting a lack of confidence in its initial steps and a failure to prioritize the necessary actions."
+    }
+  },
+  {
+    "trajectory_id": "Qwen3-8B_011_memory_b001_t00_e01-7ab08a46",
+    "LLM": "Qwen3-8B",
+    "task_type": "gaia",
+    "critical_failure_step": 5,
+    "critical_failure_module": "system",
+    "step_annotations": [
+      {
+        "step": 5,
+        "system": {
+          "failure_type": "tool_execution_error",
+          "reasoning": "Model not found for the request"
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Tool",
+      "layer_2_exception": "Tool Invocation Exception",
+      "error_phase": "E",
+      "analysis": "The error message \"The model `qwen3-8b` does not exist or you do not have access to it.\" indicates that the specified model for the python_code_generator tool is either unavailable or inaccessible. This is a system-level issue, as the model is a component of the environment required for the tool to function correctly. The tool itself is available, but the underlying model is not, leading to the failure."
+    }
+  },
+  {
+    "trajectory_id": "Qwen3-8B_012_memory_b001_t00_e02-8d639e26",
+    "LLM": "Qwen3-8B",
+    "task_type": "gaia",
+    "critical_failure_step": 2,
+    "critical_failure_module": "planning",
+    "step_annotations": [
+      {
+        "step": 2,
+        "planning": {
+          "failure_type": "inefficient_plan",
+          "reasoning": "Make an low efficient plan that not success"
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Planning",
+      "layer_2_exception": "Faulty Task Structuring",
+      "error_phase": "RP",
+      "analysis": "The agent is attempting to find a specific piece of information (a number mentioned after dinosaurs are shown in a video). The initial plan to extract the text from the video's URL failed. The subsequent plan to search Wikipedia also failed to provide relevant information. The agent is struggling to adapt its strategy to find the information, indicating a failure in structuring the task effectively. It's not efficiently breaking down the problem or choosing the right tools to get the required information."
+    }
+  },
+  {
+    "trajectory_id": "Qwen3-8B_013_memory_b001_t00_e03-21a3a421",
+    "LLM": "Qwen3-8B",
+    "task_type": "gaia",
+    "critical_failure_step": 4,
+    "critical_failure_module": "reflection",
+    "step_annotations": [
+      {
+        "step": 4,
+        "reflection": {
+          "failure_type": "outcome_misinterpretation",
+          "reasoning": "Error in reasoning the right information for the answer"
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Task Flow",
+      "layer_2_exception": "Error Propagation",
+      "error_phase": "E",
+      "analysis": "The agent initially struggled to retrieve the correct data, retrieving information about Croatia instead of Bulgaria. While it eventually found the correct data source (the NSI PDF), the initial difficulty in locating the relevant information and extracting the correct numbers indicates an error in reasoning the right information for the answer. The agent was able to recover and provide the correct answer."
+    }
+  },
+  {
+    "trajectory_id": "Qwen3-8B_014_memory_b001_t00_e04-5e8c1dcf",
+    "LLM": "Qwen3-8B",
+    "task_type": "gaia",
+    "critical_failure_step": 4,
+    "critical_failure_module": "reflection",
+    "step_annotations": [
+      {
+        "step": 4,
+        "reflection": {
+          "failure_type": "progress_misjudge",
+          "reasoning": "Get the wrong information for the answer think it is success"
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Reasoning",
+      "layer_2_exception": "Circular or Invalid Reasoning ",
+      "error_phase": "RP",
+      "analysis": "The agent believes it has found the correct information to answer the user's question, but it has misinterpreted the extracted text and incorrectly concluded that the in-line citation is accurate, when there is a mismatch in the page numbers. This indicates a failure in evaluating the outcome and interpreting the information."
+    }
+  },
+  {
+    "trajectory_id": "Qwen3-8B_015_memory_b001_t00_e05-c9015705",
+    "LLM": "Qwen3-8B",
+    "task_type": "gaia",
+    "critical_failure_step": 2,
+    "critical_failure_module": "reflection",
+    "step_annotations": [
+      {
+        "step": 2,
+        "reflection": {
+          "failure_type": "outcome_misinterpretation",
+          "reasoning": "Misinterpret the meaning and grouping of the provided cuneiform symbols"
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Reasoning",
+      "layer_2_exception": "Circular or Invalid Reasoning",
+      "error_phase": "RP",
+      "analysis": "The agent misinterprets the meaning and grouping of the provided cuneiform symbols, leading to incorrect assumptions about their values and how they combine to form a number. This results in flawed reasoning about the base-60 system and the positional values of the symbols."
+    }
+  },
+  {
+    "trajectory_id": "Qwen3-8B_016_memory_b001_t00_e06-71f77595",
+    "LLM": "Qwen3-8B",
+    "task_type": "gaia",
+    "critical_failure_step": 4,
+    "critical_failure_module": "reflection",
+    "step_annotations": [
+      {
+        "step": 4,
+        "reflection": {
+          "failure_type": "progress_misjudge",
+          "reasoning": "Get the wrong information for the answer think it is success"
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Reasoning",
+      "layer_2_exception": "Circular or Invalid Reasoning ",
+      "error_phase": "RP",
+      "analysis": "The agent incorrectly identifies issue #13602 as the oldest closed issue with the Regression label and assumes the label was added on the opening date (05/21/19) due to the snippet mentioning \"the oldest\". However, it fails to verify the closure date and label addition date, leading to an incorrect conclusion. The agent gets the wrong information for the answer and thinks it is success."
+    }
+  },
+  {
+    "trajectory_id": "Qwen3-8B_017_memory_b001_t00_e07-f5b5d66a",
+    "LLM": "Qwen3-8B",
+    "task_type": "gaia",
+    "critical_failure_step": 2,
+    "critical_failure_module": "planning",
+    "step_annotations": [
+      {
+        "step": 2,
+        "planning": {
+          "failure_type": "inefficient_plan",
+          "reasoning": "Make an low efficient plan that not success"
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Planning",
+      "layer_2_exception": "Faulty Task Structuring",
+      "error_phase": "RP",
+      "analysis": "The legacy error type is PLANNING, and the reason is a low-efficiency plan. This aligns with \"Faulty Task Structuring\" because the agent is making a plan that is not successful, indicating a failure in decomposing the task into a logical sequence of subtasks."
+    }
+  }
+]

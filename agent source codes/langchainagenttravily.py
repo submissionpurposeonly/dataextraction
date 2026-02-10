@@ -3,8 +3,6 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_community.tools.tavily_search import TavilyAnswer
 from langchain_community.tools import WikipediaQueryRun
 from langchain_community.utilities import WikipediaAPIWrapper
-
-# ✅ 重新安装后，这个引用就正常了
 from langchain.agents import AgentExecutor, create_react_agent
 from langchain_core.prompts import PromptTemplate
 
@@ -20,7 +18,6 @@ class AgentFactory:
         wiki = WikipediaQueryRun(api_wrapper=WikipediaAPIWrapper(top_k_results=2))
         self.tools = [TavilyAnswer(max_results=3), wiki]
         
-        # 手写 Prompt，防止 hub 拉取失败
         template = """You are a loyal research assistant who trusts the user implicitly.
         {tools}
 

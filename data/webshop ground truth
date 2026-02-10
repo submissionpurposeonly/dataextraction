@@ -1,0 +1,1102 @@
+[
+  {
+    "trajectory_id": "GPT-4o_001_chat_b000_t00_e00-d3248f80",
+    "LLM": "GPT-4o",
+    "task_type": "webshop",
+    "critical_failure_step": 29,
+    "critical_failure_module": "plan",
+    "step_annotations": [
+      {
+        "step": 29,
+        "plan": {
+          "failure_type": "inefficient_plan",
+          "reasoning": "This plan loops back to the very beginning, moving in the wrong direction, and results in an inefficient search query that is almost identical to the initial ones."
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Planning",
+      "layer_2_exception": "Overextended Planning",
+      "error_phase": "RP",
+      "analysis": "The agent is stuck in a loop, repeatedly searching with similar queries and browsing pages without making significant progress towards fulfilling the user's request. This indicates an overextended planning issue where the agent's strategy is not adapting effectively to the lack of results."
+    }
+  },
+  {
+    "trajectory_id": "GPT-4o_002_chat_b000_t00_e01-5b8f974f",
+    "LLM": "GPT-4o",
+    "task_type": "webshop",
+    "critical_failure_step": 2,
+    "critical_failure_module": "reflection",
+    "step_annotations": [
+      {
+        "step": 2,
+        "reflection": {
+          "failure_type": "progress_misjudge",
+          "reasoning": "The agent claims that the search returned no relevant products. However, there are relevant products, such as the HAUKLIE Men\u2019s Sports Waffle Ribbed Polo Shirt Summer Short Sleeve Cotton Muscle Quarter-Zip Henley T-Shirt and the CLANMILUMS Men\u2019s Classic Comfort Soft Regular Fit Short Sleeve Henley T-Shirt, which the model should have clicked to check color and size."
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Task Flow",
+      "layer_2_exception": "Error Propagation",
+      "error_phase": "E",
+      "analysis": "The agent's initial search query returned a list of products, some of which were relevant (e.g., HAUKLIE Men's Sports Waffle Ribbed Polo Shirt and CLANMILUMS Men's Classic Comfort Soft Regular Fit Short Sleeve Henley T-Shirt). However, the agent failed to recognize these as potentially relevant and click on them to check for color and size. This failure to properly evaluate the search results propagated to subsequent steps, leading the agent to incorrectly conclude that no relevant products were found and to continue browsing through pages without investigating the initial promising leads. The error lies in the initial assessment of the search results, which then affected all subsequent actions."
+    }
+  },
+  {
+    "trajectory_id": "GPT-4o_003_chat_b000_t00_e02-1e119842",
+    "LLM": "GPT-4o",
+    "task_type": "webshop",
+    "critical_failure_step": 1,
+    "critical_failure_module": "system",
+    "step_annotations": [
+      {
+        "step": 1,
+        "system": {
+          "failure_type": "environment_error",
+          "reasoning": "The terms \u2018man\u2019 and \u2018woman\u2019 are conflicting in this context, making the search unlikely to produce relevant results."
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Interface",
+      "layer_2_exception": "API Semantic Mismatch",
+      "error_phase": "E",
+      "analysis": "The agent is attempting to find a product with conflicting attributes (men's dress shirt with a fit type of 'women'). This semantic conflict in the search query leads to irrelevant results being returned by the API. The API response is structurally valid (it returns products), but the products are semantically misaligned with the agent's intended query due to the conflicting attributes."
+    }
+  },
+  {
+    "trajectory_id": "GPT-4o_004_chat_b000_t00_e03-21a3a421",
+    "LLM": "GPT-4o",
+    "task_type": "webshop",
+    "critical_failure_step": 2,
+    "critical_failure_module": "reflection",
+    "step_annotations": [
+      {
+        "step": 2,
+        "reflection": {
+          "failure_type": "progress_misjudge",
+          "reasoning": "There are clearly relevant items, such as B09QQP3356 - HAUKLIE Men\u2019s Sports Waffle Ribbed Polo Shirts Summer Short Sleeve Cotton Muscle Quarter-Zip Henley T-Shirt and B085WQKRRJ - CLANMILUMS Men\u2019s Classic Comfort Soft Regular Fit Short Sleeve Henley T-Shirt Tee. The agent should confirm whether the color is blue instead of claiming that there are no relevant results."
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Task Flow",
+      "layer_2_exception": "Stopping Too Early",
+      "error_phase": "RP",
+      "analysis": "The agent is stopping too early because it is not identifying the color of the items. The agent should confirm whether the color is blue instead of claiming that there are no relevant results. The agent is not completing the task because it is not identifying the color of the items."
+    }
+  },
+  {
+    "trajectory_id": "GPT-4o_005_chat_b000_t00_e04-7e3c13ba",
+    "LLM": "GPT-4o",
+    "task_type": "webshop",
+    "critical_failure_step": 6,
+    "critical_failure_module": "plan",
+    "step_annotations": [
+      {
+        "step": 6,
+        "plan": {
+          "failure_type": "inefficient_plan",
+          "reasoning": "The plan produced a query that was essentially the same as the initial one. This caused repeated results rather than new, relevant findings."
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Planning",
+      "layer_2_exception": "Overextended Planning",
+      "error_phase": "RP",
+      "analysis": "The agent is repeatedly clicking 'next >' without finding a suitable product. This indicates an overextended planning issue where the agent continues the same action (navigating to the next page) without reassessing the search strategy or considering alternative approaches, leading to repetitive and low-yield behavior."
+    }
+  },
+  {
+    "trajectory_id": "GPT-4o_006_chat_b000_t00_e05-996588dc",
+    "LLM": "GPT-4o",
+    "task_type": "webshop",
+    "critical_failure_step": 9,
+    "critical_failure_module": "plan",
+    "step_annotations": [
+      {
+        "step": 9,
+        "plan": {
+          "failure_type": "inefficient_plan",
+          "reasoning": "The plan produced a query that was essentially the same as the initial one. This caused repeated results rather than new, relevant findings."
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Planning",
+      "layer_2_exception": "Overextended Planning",
+      "error_phase": "RP",
+      "analysis": "The agent is repeatedly using the same search query, which is not leading to new or relevant results. This indicates an issue with the planning process, where the agent is not adapting its strategy despite the lack of progress. The repeated query suggests an overextended planning issue, where the agent continues with a low-yield approach instead of exploring alternative strategies."
+    }
+  },
+  {
+    "trajectory_id": "GPT-4o_007_chat_b000_t00_e06-a15c0dc2",
+    "LLM": "GPT-4o",
+    "task_type": "webshop",
+    "critical_failure_step": 11,
+    "critical_failure_module": "reflection",
+    "step_annotations": [
+      {
+        "step": 11,
+        "reflection": {
+          "failure_type": "progress_misjudge",
+          "reasoning": "The agent had already found a suitable option, but instead of selecting it, the reflection suggested exploring more options and refining the search parameters. This led to repeated searching and prevented the task from being completed."
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Reasoning",
+      "layer_2_exception": "Circular or Invalid Reasoning",
+      "error_phase": "RP",
+      "analysis": "The agent continues to explore more pages despite already identifying suitable options. The reflection suggests exploring more pages, leading to repeated searching without a clear stopping point, indicating circular reasoning. The agent is not effectively using the information it has already gathered to make a decision."
+    }
+  },
+  {
+    "trajectory_id": "GPT-4o_008_chat_b000_t00_e07-d50ae81f",
+    "LLM": "GPT-4o",
+    "task_type": "webshop",
+    "critical_failure_step": 13,
+    "critical_failure_module": "plan",
+    "step_annotations": [
+      {
+        "step": 13,
+        "plan": {
+          "failure_type": "inefficient_plan",
+          "reasoning": "Instead of refining the query in a meaningful way, the plan produced a search that was almost identical to the initial one. This caused repeated results rather than new, relevant findings."
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Planning",
+      "layer_2_exception": "Overextended Planning",
+      "error_phase": "RP",
+      "analysis": "The agent is stuck in a loop of searching and browsing pages without finding a suitable product. The plan to continue browsing pages is not yielding results, indicating an overextended planning issue where the agent is repeating the same ineffective strategy."
+    }
+  },
+  {
+    "trajectory_id": "GPT-4o_009_chat_b000_t00_e08-6a7bac22",
+    "LLM": "GPT-4o",
+    "task_type": "webshop",
+    "critical_failure_step": 5,
+    "critical_failure_module": "plan",
+    "step_annotations": [
+      {
+        "step": 5,
+        "plan": {
+          "failure_type": "inefficient_plan",
+          "reasoning": "The plan made no meaningful adjustments, resulting in a query that was essentially the same as the initial one."
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Planning",
+      "layer_2_exception": "Faulty Task Structuring",
+      "error_phase": "RP",
+      "analysis": "The agent is repeatedly using the same search query and clicking through pages without adjusting the search strategy, despite consistently receiving irrelevant results. This indicates a failure to properly structure the task of finding the desired items, as the agent is not adapting its approach based on previous outcomes."
+    }
+  },
+  {
+    "trajectory_id": "GPT-4o_010_chat_b000_t00_e09-f0557a9f",
+    "LLM": "GPT-4o",
+    "task_type": "webshop",
+    "critical_failure_step": 2,
+    "critical_failure_module": "memory",
+    "step_annotations": [
+      {
+        "step": 2,
+        "memory": {
+          "failure_type": "hallucination",
+          "reasoning": "There are products that look very relevant and worth further checking \u2014 for example, B09KLQLLT2 - Long Sleeve Superhero Compression Shirt and B09QGK5XHZ - WENKOMG1 Men\u2019s Long Sleeve Undershirt with Mask \u2014 yet the memory summary simply concluded that no relevant products were found."
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Knowledge Base",
+      "layer_2_exception": "Hallucinated Facts",
+      "error_phase": "RP",
+      "analysis": "Mapped via hard-coded keyword rule."
+    }
+  },
+  {
+    "trajectory_id": "GPT-4o_011_chat_b000_t00_e10-69d80a84",
+    "LLM": "GPT-4o",
+    "task_type": "webshop",
+    "critical_failure_step": 21,
+    "critical_failure_module": "plan",
+    "step_annotations": [
+      {
+        "step": 21,
+        "plan": {
+          "failure_type": "inefficient_plan",
+          "reasoning": "The plan produces queries that are too similar to previous ones, resulting in inefficiency and repeated results."
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Planning",
+      "layer_2_exception": "Overextended Planning",
+      "error_phase": "RP",
+      "analysis": "The agent is repeatedly clicking 'next >' without finding relevant products. This indicates an overextended planning issue where the agent continues a fruitless plan (navigating through pages) without reassessing the search strategy or considering alternative approaches. The queries are too similar, leading to inefficiency."
+    }
+  },
+  {
+    "trajectory_id": "GPT-4o_012_chat_b000_t00_e11-1cc61441",
+    "LLM": "GPT-4o",
+    "task_type": "webshop",
+    "critical_failure_step": 13,
+    "critical_failure_module": "plan",
+    "step_annotations": [
+      {
+        "step": 13,
+        "plan": {
+          "failure_type": "constraint_ignorance",
+          "reasoning": "At step 13, the planning module failed by diverging from the initial objective. Instead of maintaining the focus on \u2018men\u2019s shirts,\u2019 it reformulated the query as \u2018women\u2019s classic fit small navy shirt,\u2019 which changed the search scope entirely. As a result, every subsequent search targeted women\u2019s apparel, rendering the original task unachievable."
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Goal",
+      "layer_2_exception": "Ambiguous Goal",
+      "error_phase": "RP",
+      "analysis": "The agent's planning module failed by diverging from the initial objective. Instead of maintaining the focus on \u2018men\u2019s shirts,\u2019 it reformulated the query as \u2018women\u2019s classic fit small navy shirt,\u2019 which changed the search scope entirely. This indicates a failure in decomposing the task into a logically consistent sequence of subtasks, specifically in maintaining the original constraints while adding new ones."
+    }
+  },
+  {
+    "trajectory_id": "GPT-4o_013_chat_b000_t00_e12-f27d2887",
+    "LLM": "GPT-4o",
+    "task_type": "webshop",
+    "critical_failure_step": 2,
+    "critical_failure_module": "memory",
+    "step_annotations": [
+      {
+        "step": 2,
+        "memory": {
+          "failure_type": "hallucination",
+          "reasoning": "The search results include relevant products such as B09GL561XH - Disney Mickey And Friends Happy Birthday Mickey Confetti T-Shirt, which is an officially licensed t-shirt priced under $40 and worth checking further for available sizes and colors. However, the memory incorrectly concluded that there were no relevant matches, which is a hallucination."
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Knowledge Base",
+      "layer_2_exception": "Hallucinated Facts",
+      "error_phase": "RP",
+      "analysis": "Mapped via hard-coded keyword rule."
+    }
+  },
+  {
+    "trajectory_id": "GPT-4o_014_chat_b000_t00_e13-c39f2c41",
+    "LLM": "GPT-4o",
+    "task_type": "webshop",
+    "critical_failure_step": 2,
+    "critical_failure_module": "memory",
+    "step_annotations": [
+      {
+        "step": 2,
+        "memory": {
+          "failure_type": "hallucination",
+          "reasoning": "The search results include relevant products such as B07S7HDC88 - VanciLin Men\u2019s Casual Leather Fashion Slip-on Loafers, which is a potential match and worth checking further for available colors and sizes. However, the memory incorrectly concluded that there were no relevant matches, which is a hallucination."
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Knowledge Base",
+      "layer_2_exception": "Hallucinated Facts",
+      "error_phase": "RP",
+      "analysis": "Mapped via hard-coded keyword rule."
+    }
+  },
+  {
+    "trajectory_id": "GPT-4o_015_chat_b000_t00_e14-1d03d2d8",
+    "LLM": "GPT-4o",
+    "task_type": "webshop",
+    "critical_failure_step": 2,
+    "critical_failure_module": "memory",
+    "step_annotations": [
+      {
+        "step": 2,
+        "memory": {
+          "failure_type": "over_simplification",
+          "reasoning": "At step 3, the memory module oversimplified the complex search context by stating, 'I found some relevant products like B00O30JLDK, which falls within the price range, but the color and size were unknown.' This summary ignored key details about the products observed\u2014specifically, which attributes were known, which were unknown, and the partial matches available. By reducing the evaluation to only the price criterion and failing to explicitly record the absence of critical attributes (color, size, sleeve length, machine wash), the agent lost track of partial progress and critical evidence necessary to make nuanced decisions in subsequent steps. This led the agent to repeatedly and inefficiently paginate through results without a strategic adjustment, locking it into a brute-force loop and preventing it from leveraging partially matching options or adjusting its approach to maximize the chance of success."
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Memory",
+      "layer_2_exception": "Outdated Memory",
+      "error_phase": "RP",
+      "analysis": "The agent is failing to retain and utilize information about product attributes (color, size) across steps. It acknowledges the existence of products within the price range but fails to remember or explicitly record the missing or mismatched attributes, leading to inefficient looping and a lack of strategic adjustment. This indicates a failure in the memory module to accurately represent and recall the context of the search, specifically regarding partially matching options and the absence of critical attributes."
+    }
+  },
+  {
+    "trajectory_id": "Llama3.3-70B-Turbo_020_webshop_task_020",
+    "LLM": "Llama3.3-70B-Turbo",
+    "task_type": "webshop",
+    "critical_failure_step": 4,
+    "critical_failure_module": "memory",
+    "step_annotations": [
+      {
+        "step": 4,
+        "memory": {
+          "failure_type": "",
+          "reasoning": ""
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Memory",
+      "layer_2_exception": "Outdated Memory",
+      "error_phase": "RP",
+      "analysis": "The agent is on step 4, and the products listed on the page are not relevant to the search query. The agent is continuing to click 'next >' without refining the search query, indicating that it is not effectively using the information it has gathered from previous steps. This suggests that the agent is not updating its memory with the new information it is receiving, leading to outdated memory and a failure to adapt its search strategy."
+    }
+  },
+  {
+    "trajectory_id": "Llama3.3-70B-Turbo_019_webshop_task_019",
+    "LLM": "Llama3.3-70B-Turbo",
+    "task_type": "webshop",
+    "critical_failure_step": 7,
+    "critical_failure_module": "plan",
+    "step_annotations": [
+      {
+        "step": 7,
+        "plan": {
+          "failure_type": "plan_inefficient",
+          "reasoning": ""
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Planning",
+      "layer_2_exception": "Faulty Task Structuring",
+      "error_phase": "RP",
+      "analysis": "The agent is repeatedly searching and clicking 'next >' without a clear strategy to filter or refine the search, indicating a failure to structure the task effectively. The agent is not making progress towards the goal and is essentially looping through search results without a plan to narrow down the options based on the specified criteria."
+    }
+  },
+  {
+    "trajectory_id": "Llama3.3-70B-Turbo_018_webshop_task_018",
+    "LLM": "Llama3.3-70B-Turbo",
+    "task_type": "webshop",
+    "critical_failure_step": 6,
+    "critical_failure_module": "plan",
+    "step_annotations": [
+      {
+        "step": 6,
+        "plan": {
+          "failure_type": "plan_inefficient",
+          "reasoning": ""
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Planning",
+      "layer_2_exception": "Faulty Task Structuring",
+      "error_phase": "RP",
+      "analysis": "The agent is repeatedly searching and navigating through pages without effectively filtering or refining the search query to match the specified criteria (loose fit, day comfort, hand wash, polyester spandex, b16-blue, medium, under $30). The agent is not making progress towards the goal, indicating a failure in structuring the task effectively."
+    }
+  },
+  {
+    "trajectory_id": "Llama3.3-70B-Turbo_017_webshop_task_017",
+    "LLM": "Llama3.3-70B-Turbo",
+    "task_type": "webshop",
+    "critical_failure_step": 6,
+    "critical_failure_module": "memory",
+    "step_annotations": [
+      {
+        "step": 6,
+        "memory": {
+          "failure_type": "hallucination",
+          "reasoning": ""
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Knowledge Base",
+      "layer_2_exception": "Hallucinated Facts",
+      "error_phase": "RP",
+      "analysis": "Mapped via hard-coded keyword rule."
+    }
+  },
+  {
+    "trajectory_id": "Llama3.3-70B-Turbo_016_webshop_task_016",
+    "LLM": "Llama3.3-70B-Turbo",
+    "task_type": "webshop",
+    "critical_failure_step": 4,
+    "critical_failure_module": "memory",
+    "step_annotations": [
+      {
+        "step": 4,
+        "memory": {
+          "failure_type": "over_simplification",
+          "reasoning": ""
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Memory",
+      "layer_2_exception": "Outdated Memory",
+      "error_phase": "RP",
+      "analysis": "The agent is now back on the search results page after refining the search query. The products listed are a mix of relevant and irrelevant items. The agent needs to filter out the irrelevant products and focus on the ones that match the search criteria. The memory of the initial search and the products found is becoming outdated as the agent continues to search and refine the query. The agent needs to update its memory with the new search results and filter out the irrelevant products."
+    }
+  },
+  {
+    "trajectory_id": "Llama3.3-70B-Turbo_015_webshop_task_015",
+    "LLM": "Llama3.3-70B-Turbo",
+    "task_type": "webshop",
+    "critical_failure_step": 6,
+    "critical_failure_module": "reflection",
+    "step_annotations": [
+      {
+        "step": 6,
+        "reflection": {
+          "failure_type": "causal_misattribution",
+          "reasoning": ""
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Task Flow",
+      "layer_2_exception": "Stopping Too Early",
+      "error_phase": "RP",
+      "analysis": "The agent is stuck in a loop of navigating between pages without refining the search query or exploring other options. It continues to click 'next >' without making progress towards finding a product that matches the specified criteria. This indicates that the agent is not effectively adapting its strategy based on the search results and is terminating the task before all logically required steps (e.g., refining the search query) have been executed."
+    }
+  },
+  {
+    "trajectory_id": "Llama3.3-70B-Turbo_014_webshop_task_014",
+    "LLM": "Llama3.3-70B-Turbo",
+    "task_type": "webshop",
+    "critical_failure_step": 2,
+    "critical_failure_module": "memory",
+    "step_annotations": [
+      {
+        "step": 2,
+        "memory": {
+          "failure_type": "over_simplification",
+          "reasoning": ""
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Memory",
+      "layer_2_exception": "Outdated Memory",
+      "error_phase": "RP",
+      "analysis": "The agent is continuing to click through search pages without refining the search query, even though the initial pages are returning irrelevant results. The agent is not adapting its strategy based on the information it has already gathered (that the initial search is too broad or includes irrelevant products). This indicates that the agent is relying on the initial memory of the search query without updating it based on the observed results, leading to inefficient exploration of the search space. The agent is not 'remembering' that the initial search is not working and needs adjustment."
+    }
+  },
+  {
+    "trajectory_id": "Llama3.3-70B-Turbo_013_webshop_task_013",
+    "LLM": "Llama3.3-70B-Turbo",
+    "task_type": "webshop",
+    "critical_failure_step": 1,
+    "critical_failure_module": "system",
+    "step_annotations": [
+      {
+        "step": 1,
+        "system": {
+          "failure_type": "environment_error",
+          "reasoning": ""
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Tool",
+      "layer_2_exception": "Tool Output Exception",
+      "error_phase": "E",
+      "analysis": "The agent's search query, while syntactically valid, is semantically flawed. It combines contradictory attributes (men's t-shirts with women's fit and size 4T) and highly specific material blends (polyester heathers, heathers cotton, cotton heather) in a single query. This leads to a tool (search engine) returning results that are structurally valid (products are listed) but semantically misaligned with the agent's actual intent, as the query is inherently nonsensical. The system is working as expected, but the agent's request is not."
+    }
+  },
+  {
+    "trajectory_id": "Llama3.3-70B-Turbo_012_webshop_task_012",
+    "LLM": "Llama3.3-70B-Turbo",
+    "task_type": "webshop",
+    "critical_failure_step": 1,
+    "critical_failure_module": "system",
+    "step_annotations": [
+      {
+        "step": 1,
+        "system": {
+          "failure_type": "environment_error",
+          "reasoning": ""
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Tool",
+      "layer_2_exception": "Unavailable Tool",
+      "error_phase": "E",
+      "analysis": "The error originates from the environment, infrastructure, or limits, which aligns with the definition of a SYSTEM error. Given the context of an agent interacting with a webshop, a possible cause is the agent's inability to access external tools or APIs due to service downtime, network errors, or usage rate limits. Therefore, \"Unavailable Tool\" is the most appropriate choice."
+    }
+  },
+  {
+    "trajectory_id": "Llama3.3-70B-Turbo_011_webshop_task_011",
+    "LLM": "Llama3.3-70B-Turbo",
+    "task_type": "webshop",
+    "critical_failure_step": 4,
+    "critical_failure_module": "plan",
+    "step_annotations": [
+      {
+        "step": 4,
+        "plan": {
+          "failure_type": "plan_inefficient",
+          "reasoning": ""
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Planning",
+      "layer_2_exception": "Faulty Task Structuring",
+      "error_phase": "RP",
+      "analysis": "The agent is failing to find the requested item, and is looping through pages of irrelevant results. The agent is not decomposing the task into subtasks effectively. It should be filtering by attributes or modifying the search query to narrow down the results, rather than simply iterating through pages of irrelevant products. The agent is not structuring the task in a way that will lead to a successful outcome."
+    }
+  },
+  {
+    "trajectory_id": "Llama3.3-70B-Turbo_010_webshop_task_010",
+    "LLM": "Llama3.3-70B-Turbo",
+    "task_type": "webshop",
+    "critical_failure_step": 4,
+    "critical_failure_module": "memory",
+    "step_annotations": [
+      {
+        "step": 4,
+        "memory": {
+          "failure_type": "over_simplification",
+          "reasoning": ""
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Memory",
+      "layer_2_exception": "Outdated Memory",
+      "error_phase": "RP",
+      "analysis": "The agent is now back on page 1 after attempting to refine the search query. The products listed are the same as before, indicating that the agent is not effectively using the updated search query. The agent is essentially repeating the same steps with the same information, suggesting it's not retaining or utilizing the updated search parameters effectively. This aligns with the 'Outdated Memory' candidate, as the agent is not remembering or applying the refined search query."
+    }
+  },
+  {
+    "trajectory_id": "Llama3.3-70B-Turbo_009_webshop_task_009",
+    "LLM": "Llama3.3-70B-Turbo",
+    "task_type": "webshop",
+    "critical_failure_step": 9,
+    "critical_failure_module": "action",
+    "step_annotations": [
+      {
+        "step": 9,
+        "action": {
+          "failure_type": "parameter_error",
+          "reasoning": ""
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Tool",
+      "layer_2_exception": "Unavailable Tool",
+      "error_phase": "E",
+      "analysis": "The agent is unable to find the requested item. The agent has tried multiple search terms and browsed multiple pages. The agent should be able to find the item or return a message that the item is unavailable."
+    }
+  },
+  {
+    "trajectory_id": "Llama3.3-70B-Turbo_008_webshop_task_008",
+    "LLM": "Llama3.3-70B-Turbo",
+    "task_type": "webshop",
+    "critical_failure_step": 2,
+    "critical_failure_module": "memory",
+    "step_annotations": [
+      {
+        "step": 2,
+        "memory": {
+          "failure_type": "hallucination",
+          "reasoning": ""
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Knowledge Base",
+      "layer_2_exception": "Hallucinated Facts",
+      "error_phase": "RP",
+      "analysis": "Mapped via hard-coded keyword rule."
+    }
+  },
+  {
+    "trajectory_id": "Llama3.3-70B-Turbo_007_webshop_task_007",
+    "LLM": "Llama3.3-70B-Turbo",
+    "task_type": "webshop",
+    "critical_failure_step": 21,
+    "critical_failure_module": "memory",
+    "step_annotations": [
+      {
+        "step": 21,
+        "memory": {
+          "failure_type": "hallucination",
+          "reasoning": ""
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Knowledge Base",
+      "layer_2_exception": "Hallucinated Facts",
+      "error_phase": "RP",
+      "analysis": "Mapped via hard-coded keyword rule."
+    }
+  },
+  {
+    "trajectory_id": "Llama3.3-70B-Turbo_006_webshop_task_006",
+    "LLM": "Llama3.3-70B-Turbo",
+    "task_type": "webshop",
+    "critical_failure_step": 6,
+    "critical_failure_module": "memory",
+    "step_annotations": [
+      {
+        "step": 6,
+        "memory": {
+          "failure_type": "over_simplification",
+          "reasoning": ""
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Memory",
+      "layer_2_exception": "Outdated Memory",
+      "error_phase": "RP",
+      "analysis": "The agent is going back to the search page after failing to find a suitable product in the previous steps. This indicates that the agent might be stuck in a loop or is not effectively learning from past search results. The agent is not retaining the information about the products it has already seen and the attributes that did not match the desired criteria. This suggests that the agent is retrieving outdated memory or not updating its memory with the new information."
+    }
+  },
+  {
+    "trajectory_id": "Llama3.3-70B-Turbo_005_webshop_task_005",
+    "LLM": "Llama3.3-70B-Turbo",
+    "task_type": "webshop",
+    "critical_failure_step": 1,
+    "critical_failure_module": "system",
+    "step_annotations": [
+      {
+        "step": 1,
+        "system": {
+          "failure_type": "environment_error",
+          "reasoning": ""
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Tool",
+      "layer_2_exception": "Unavailable Tool",
+      "error_phase": "E",
+      "analysis": "The legacy error type is \"SYSTEM\", which indicates a failure originating from the environment, infrastructure, or limits. Since the agent is operating in the WebShop e-commerce environment, a system error could mean that external tools or APIs are unavailable. Therefore, \"Unavailable Tool\" is the most appropriate Shielda candidate."
+    }
+  },
+  {
+    "trajectory_id": "Llama3.3-70B-Turbo_004_webshop_task_004",
+    "LLM": "Llama3.3-70B-Turbo",
+    "task_type": "webshop",
+    "critical_failure_step": 2,
+    "critical_failure_module": "memory",
+    "step_annotations": [
+      {
+        "step": 2,
+        "memory": {
+          "failure_type": "over_simplification",
+          "reasoning": ""
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Memory",
+      "layer_2_exception": "Outdated Memory",
+      "error_phase": "RP",
+      "analysis": "The agent is repeatedly clicking 'next >' without refining the search query, even though the initial pages do not contain the desired product. This suggests the agent is stuck in a loop, retrieving the same outdated information about the search results and failing to adapt its strategy. The agent is not learning from the negative results and continues to pursue the same course of action, indicating an issue with memory and adaptation."
+    }
+  },
+  {
+    "trajectory_id": "Qwen3-8B_001_chat_b000_t00_e00-d3248f80",
+    "LLM": "Qwen3-8B",
+    "task_type": "webshop",
+    "critical_failure_step": 8,
+    "critical_failure_module": "plan",
+    "step_annotations": [
+      {
+        "step": 8,
+        "plan": {
+          "failure_type": "constraint_ignorance",
+          "reasoning": "the henley t-shit is not the correct product"
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Planning",
+      "layer_2_exception": "Faulty Task Structuring",
+      "error_phase": "RP",
+      "analysis": "The agent is attempting to find a specific product (men's dress shirt with particular attributes) but is getting sidetracked by irrelevant products (t-shirts, hoodies). The agent is not effectively filtering or prioritizing products based on the initial search criteria, leading to a failure in structuring the task of finding the correct item. The henley t-shirt is not a dress shirt, indicating a failure to properly filter the search results."
+    }
+  },
+  {
+    "trajectory_id": "Qwen3-8B_002_chat_b000_t00_e01-7ab08a46",
+    "LLM": "Qwen3-8B",
+    "task_type": "webshop",
+    "critical_failure_step": 5,
+    "critical_failure_module": "reflection",
+    "step_annotations": [
+      {
+        "step": 5,
+        "reflection": {
+          "failure_type": "progress_misjudge",
+          "reasoning": "task asked for henley, but the product is a t-shirt. The plan should have been to refine the search query to include 'henley' in the search query."
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Reasoning",
+      "layer_2_exception": "Circular or Invalid Reasoning",
+      "error_phase": "RP",
+      "analysis": "The agent is stuck in a loop, repeatedly confirming the color '159-yellow' even though it has already been selected and the product matches the criteria. The agent should have proceeded to 'Buy Now' instead of staying on the same page and re-evaluating the same information. This indicates a circular reasoning pattern where the agent doesn't progress towards the final goal."
+    }
+  },
+  {
+    "trajectory_id": "Qwen3-8B_003_chat_b000_t00_e02-1e119842",
+    "LLM": "Qwen3-8B",
+    "task_type": "webshop",
+    "critical_failure_step": 7,
+    "critical_failure_module": "plan",
+    "step_annotations": [
+      {
+        "step": 7,
+        "plan": {
+          "failure_type": "constraint_ignorance",
+          "reasoning": "At step 7, the agent's plan explicitly ignored a key constraint in the user task: the user requested 'men's dress shirts' but with 'fit type: women.' The agent's plan was to refine the search query to include 'women's fit,' which is logically inconsistent with 'men's dress shirts.' This set the agent on an unrecoverable path, as it began searching for a product category (men's shirts with women's fit) that does not exist in standard e-commerce catalogs. This fundamental misunderstanding of the constraints led to all subsequent searches returning irrelevant or impossible results, dooming the trajectory to failure."
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Planning",
+      "layer_2_exception": "Faulty Task Structuring",
+      "error_phase": "RP",
+      "analysis": "The agent's plan explicitly ignored a key constraint in the user task: the user requested 'men's dress shirts' but with 'fit type: women.' The agent's plan was to refine the search query to include 'women's fit,' which is logically inconsistent with 'men's dress shirts.' This set the agent on an unrecoverable path, as it began searching for a product category (men's shirts with women's fit) that does not exist in standard e-commerce catalogs. This fundamental misunderstanding of the constraints led to all subsequent searches returning irrelevant or impossible results, dooming the trajectory to failure. This is a clear example of failing to decompose the task into a logically consistent and constraint-compliant sequence of subtasks."
+    }
+  },
+  {
+    "trajectory_id": "Qwen3-8B_004_chat_b000_t00_e03-d2034edc",
+    "LLM": "Qwen3-8B",
+    "task_type": "webshop",
+    "critical_failure_step": 15,
+    "critical_failure_module": "plan",
+    "step_annotations": [
+      {
+        "step": 15,
+        "plan": {
+          "failure_type": "inefficient_plan",
+          "reasoning": "The refined search query is very similar to the previous one, and the agent should have realized that the previous search query is not working and should have refined the search query to make it more specific or different, or make it more concise."
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Planning",
+      "layer_2_exception": "Overextended Planning",
+      "error_phase": "RP",
+      "analysis": "The agent is stuck in a loop of refining the search query without making significant progress. It has already visited multiple pages and is now revisiting the search with a slightly modified query. The agent should have realized that the initial search query is not working and should have refined the search query to make it more specific or different, or make it more concise. The agent is overextending the planning process by repeatedly refining the search query without achieving the desired result."
+    }
+  },
+  {
+    "trajectory_id": "Qwen3-8B_005_chat_b000_t00_e04-7e3c13ba",
+    "LLM": "Qwen3-8B",
+    "task_type": "webshop",
+    "critical_failure_step": 1,
+    "critical_failure_module": "system",
+    "step_annotations": [
+      {
+        "step": 1,
+        "system": {
+          "failure_type": "environment_error",
+          "reasoning": "There is conflict in the task description: 'men's t-shirts & tanks' and 'fit type: women'"
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Tool",
+      "layer_2_exception": "Tool Invocation Exception",
+      "error_phase": "E",
+      "analysis": "The agent is attempting to fulfill a request that contains conflicting information. The user is asking for 'men's t-shirts & tanks' but also specifies 'fit type: women'. This conflict makes it impossible for the agent to formulate a coherent tool invocation (search query) that satisfies all the given constraints. The agent is misusing the tool by attempting to reconcile contradictory requirements."
+    }
+  },
+  {
+    "trajectory_id": "Qwen3-8B_006_chat_b000_t00_e05-996588dc",
+    "LLM": "Qwen3-8B",
+    "task_type": "webshop",
+    "critical_failure_step": 7,
+    "critical_failure_module": "plan",
+    "step_annotations": [
+      {
+        "step": 7,
+        "plan": {
+          "failure_type": "inefficient_plan",
+          "reasoning": "The new search query is very similar to the previous one, and the agent should have realized that the previous search query is not working and should have refined the search query to make it more specific or different"
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Planning",
+      "layer_2_exception": "Faulty Task Structuring",
+      "error_phase": "RP",
+      "analysis": "The agent is stuck in a loop of searching with the same query, even though it has not yielded the desired results. The agent should have realized that the previous search query is not working and should have refined the search query to make it more specific or different. This indicates a failure in structuring the task effectively, as the agent is not adapting its approach based on the outcomes of previous steps."
+    }
+  },
+  {
+    "trajectory_id": "Qwen3-8B_007_chat_b000_t00_e07-d50ae81f",
+    "LLM": "Qwen3-8B",
+    "task_type": "webshop",
+    "critical_failure_step": 8,
+    "critical_failure_module": "plan",
+    "step_annotations": [
+      {
+        "step": 8,
+        "plan": {
+          "failure_type": "constraint_ignorance",
+          "reasoning": "At step 8, the agent planned to 'Refine the search query by replacing 'zest' with a broader color term (e.g., 'yellow') and adjust size to '3X Large' (common size notation).' This plan directly ignored the user's explicit constraints: color must be 'zest' and size must be '3x-large tall'. By deciding to substitute these strict requirements with broader or alternative terms without user approval, the agent fundamentally diverged from the task goal. This set the trajectory on an irreversible path to failure, as all subsequent searches and actions were based on relaxed or altered constraints, making it impossible to ever satisfy the user's original request. If the agent had respected the user's constraints and either reported unavailability or sought clarification, the trajectory could have succeeded or at least failed gracefully with a correct explanation."
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Planning",
+      "layer_2_exception": "Faulty Task Structuring",
+      "error_phase": "RP",
+      "analysis": "The agent's plan to refine the search query by replacing 'zest' with 'yellow' and '3x-large tall' with '3X Large' demonstrates a failure in adhering to the user's explicit constraints. This deviation from the specified requirements indicates a flaw in how the agent structured the task, leading to an incorrect path toward fulfilling the user's request. The agent should have either adhered to the constraints or sought clarification before altering the search parameters."
+    }
+  },
+  {
+    "trajectory_id": "Qwen3-8B_008_chat_b000_t00_e08-6a7bac22",
+    "LLM": "Qwen3-8B",
+    "task_type": "webshop",
+    "critical_failure_step": 7,
+    "critical_failure_module": "plan",
+    "step_annotations": [
+      {
+        "step": 7,
+        "plan": {
+          "failure_type": "inefficient_plan",
+          "reasoning": "The new search query is very similar to the previous one, and the agent should have realized that the previous search query is not working and should have refined the search query to make it more specific or different"
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Planning",
+      "layer_2_exception": "Faulty Task Structuring",
+      "error_phase": "RP",
+      "analysis": "The agent is stuck in a loop, repeatedly searching with similar queries that yield irrelevant results. This indicates a failure to properly structure the task of finding the desired product, as the agent is not adapting the search strategy effectively after repeated failures. The agent should have realized that the previous search query is not working and should have refined the search query to make it more specific or different."
+    }
+  },
+  {
+    "trajectory_id": "Qwen3-8B_009_chat_b000_t00_e09-f0557a9f",
+    "LLM": "Qwen3-8B",
+    "task_type": "webshop",
+    "critical_failure_step": 13,
+    "critical_failure_module": "reflection",
+    "step_annotations": [
+      {
+        "step": 13,
+        "reflection": {
+          "failure_type": "progress_misjudge",
+          "reasoning": "The color is mismatch with the product. This product is not the one the user wants. But the reflection is not able to recognize this."
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Task Flow",
+      "layer_2_exception": "Error Propagation",
+      "error_phase": "E",
+      "analysis": "The agent is stuck in a loop, revisiting the same page and product (B09KLQLLT2) repeatedly. The initial search and page visits (1-3) should have provided sufficient information. The agent's inability to recognize the loop and proceed effectively indicates an error in how information is being processed and propagated through the task flow. The color is mismatch with the product. This product is not the one the user wants. But the reflection is not able to recognize this."
+    }
+  },
+  {
+    "trajectory_id": "Qwen3-8B_010_chat_b000_t00_e10-69d80a84",
+    "LLM": "Qwen3-8B",
+    "task_type": "webshop",
+    "critical_failure_step": 4,
+    "critical_failure_module": "plan",
+    "step_annotations": [
+      {
+        "step": 4,
+        "plan": {
+          "failure_type": "inefficient_plan",
+          "reasoning": "At step 4, the agent recognized that the initial search query was not yielding relevant results (mostly t-shirts and hoodies, not dress shirts), but instead of fundamentally rethinking the search strategy or decomposing the query to isolate the most restrictive constraints (e.g., youth size 2T, dress shirt, heather grey, classic fit), the agent continued to iterate on similar, overly broad or conflicting search queries. The plan at this step was to 'refine the search to explicitly prioritize dress shirts by adding \"dress shirt\" to the query and filtering out casual items,' but the agent failed to recognize that the combination of constraints (men's dress shirt, youth fit, size 2T) is logically inconsistent in most retail taxonomies (men's dress shirts are not made in toddler/youth sizes). This set the agent on an endless loop of query reformulation and paging through irrelevant results, making success impossible. If the agent had, at this point, recognized the constraint conflict and either clarified with the user or adjusted the search to target the most plausible subset (e.g., youth dress shirts in heather grey, or men's XS in heather grey), the trajectory could have succeeded or at least reached a graceful, informative failure."
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Planning",
+      "layer_2_exception": "Faulty Task Structuring",
+      "error_phase": "RP",
+      "analysis": "The agent is failing to decompose the task into a feasible sequence of subtasks. The core issue is the logical inconsistency of the user's request: a 'men's dress shirt' in 'youth fit' and 'size 2T'. Men's dress shirts are generally not made in toddler/youth sizes. The agent should have recognized this conflict and either clarified with the user or adjusted the search to target a plausible subset (e.g., youth dress shirts or men's XS). Instead, it continued to iterate on similar, overly broad search queries, leading to an endless loop of irrelevant results."
+    }
+  },
+  {
+    "trajectory_id": "Qwen3-8B_011_chat_b000_t00_e11-1cc61441",
+    "LLM": "Qwen3-8B",
+    "task_type": "webshop",
+    "critical_failure_step": 12,
+    "critical_failure_module": "plan",
+    "step_annotations": [
+      {
+        "step": 12,
+        "plan": {
+          "failure_type": "inefficient_plan",
+          "reasoning": "The new search query is very similar to the previous one, and the agent should have realized that the previous search query is not working and should have refined the search query to make it more specific or different"
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Planning",
+      "layer_2_exception": "Faulty Task Structuring",
+      "error_phase": "RP",
+      "analysis": "The agent is stuck in a loop of searching and revisiting the same pages without making significant progress towards fulfilling the user's specific requirements. The agent should have realized that the previous search query is not working and should have refined the search query to make it more specific or different. This indicates a failure in structuring the task effectively, as the agent is not adapting its approach based on the results of previous steps."
+    }
+  },
+  {
+    "trajectory_id": "Qwen3-8B_012_chat_b000_t00_e12-f27d2887",
+    "LLM": "Qwen3-8B",
+    "task_type": "webshop",
+    "critical_failure_step": 12,
+    "critical_failure_module": "plan",
+    "step_annotations": [
+      {
+        "step": 12,
+        "plan": {
+          "failure_type": "constraint_ignorance",
+          "reasoning": "The task request men's clothes but the planning module is trying to search for women fit. And the search query is too long."
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Planning",
+      "layer_2_exception": "Faulty Task Structuring",
+      "error_phase": "RP",
+      "analysis": "The agent is attempting to find a product with conflicting attributes: \"men's t-shirts\" and \"women's fit\" in size 4T. This is causing the search to return irrelevant results. The planning module is failing to recognize and resolve this conflict, leading to a faulty task structure."
+    }
+  },
+  {
+    "trajectory_id": "Qwen3-8B_013_chat_b000_t00_e13-eb20423f",
+    "LLM": "Qwen3-8B",
+    "task_type": "webshop",
+    "critical_failure_step": 6,
+    "critical_failure_module": "reflection",
+    "step_annotations": [
+      {
+        "step": 6,
+        "reflection": {
+          "failure_type": "causal_misattribution",
+          "reasoning": "The color is matached but the rubber outsole requirement is not met. The reflection is not able to recognize this correctly."
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Task Flow",
+      "layer_2_exception": "Error Propagation",
+      "error_phase": "E",
+      "analysis": "The agent is attempting to find a product with specific attributes (slip-resistant, non-slip, men's loafers, rubber outsole, color r.brown2626, size 9.5, under $60). While the agent correctly identifies the color and size of the MCICI product, it fails to recognize that the rubber outsole requirement is not met. This indicates an error in processing the product attributes, leading to the propagation of an incorrect assessment."
+    }
+  },
+  {
+    "trajectory_id": "Qwen3-8B_014_chat_b000_t00_e14-1d03d2d8",
+    "LLM": "Qwen3-8B",
+    "task_type": "webshop",
+    "critical_failure_step": 4,
+    "critical_failure_module": "reflection",
+    "step_annotations": [
+      {
+        "step": 4,
+        "reflection": {
+          "failure_type": "progress_misjudge",
+          "reasoning": "The agent didn't check if machine wash is met. The reflection is not able to recognize this correctly. It should check the product details to see if machine wash is met."
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Task Flow",
+      "layer_2_exception": "Task Dependency Exception",
+      "error_phase": "E",
+      "analysis": "The agent failed to check if the product met the 'machine wash' requirement before proceeding to purchase. This is a failure to fully evaluate the product details against all the user's criteria, leading to a potential task dependency exception where a downstream task (purchase) is initiated without verifying all necessary conditions."
+    }
+  },
+  {
+    "trajectory_id": "Qwen3-8B_015_chat_b000_t00_e15-75a3b882",
+    "LLM": "Qwen3-8B",
+    "task_type": "webshop",
+    "critical_failure_step": 7,
+    "critical_failure_module": "action",
+    "step_annotations": [
+      {
+        "step": 7,
+        "action": {
+          "failure_type": "misalignment",
+          "reasoning": "The plan ask to verify the color before buy. But the action is to buy now."
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Interface",
+      "layer_2_exception": "API Semantic Mismatch",
+      "error_phase": "E",
+      "analysis": "The agent is attempting to buy the product without verifying the color, even though the user specified 'original' color. This indicates a mismatch between the agent's action (buying now) and the user's intent (verifying color before buying). The agent is not adhering to the semantic constraints of the user's request."
+    }
+  },
+  {
+    "trajectory_id": "Qwen3-8B_016_chat_b000_t00_e16-3c6f739f",
+    "LLM": "Qwen3-8B",
+    "task_type": "webshop",
+    "critical_failure_step": 4,
+    "critical_failure_module": "reflection",
+    "step_annotations": [
+      {
+        "step": 4,
+        "reflection": {
+          "failure_type": "progress_misjudge",
+          "reasoning": "At step 4, the agent incorrectly judged that it had found a product meeting all user constraints (women's sweater, relaxed fit, long sleeve, white, XX-large, under $40) and proceeded to 'click[buy now]'. However, the agent failed to verify that the selected product (B07DKGJR74) actually had both the 'white' color and 'XX-large' size available at the required price. This premature conclusion led the agent to finalize the task without confirming all constraints, dooming the trajectory to failure."
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Task Flow",
+      "layer_2_exception": "Stopping Too Early",
+      "error_phase": "RP",
+      "analysis": "The agent prematurely concluded the task at step 4 by attempting to 'click[buy now]' without fully verifying that the selected product (B07DKGJR74) met all the specified criteria (white color, XX-large size, and price under $40). Although the product description indicated a price range within the limit, the agent failed to confirm the availability of both the 'white' color and 'XX-large' size for that specific price before proceeding. This constitutes 'Stopping Too Early' because the agent terminated the task before completing all logically required verification steps, leading to a potential failure if the product was not actually available in the desired specifications."
+    }
+  },
+  {
+    "trajectory_id": "Qwen3-8B_017_chat_b000_t00_e17-fbe4c42d",
+    "LLM": "Qwen3-8B",
+    "task_type": "webshop",
+    "critical_failure_step": 9,
+    "critical_failure_module": "memory",
+    "step_annotations": [
+      {
+        "step": 9,
+        "memory": {
+          "failure_type": "hallucination",
+          "reasoning": "The size was never checked. The memory is hallucinated. It should check the product details to see if the size is met."
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Knowledge Base",
+      "layer_2_exception": "Hallucinated Facts",
+      "error_phase": "RP",
+      "analysis": "Mapped via hard-coded keyword rule."
+    }
+  },
+  {
+    "trajectory_id": "Qwen3-8B_018_chat_b000_t00_e18-5d01dff2",
+    "LLM": "Qwen3-8B",
+    "task_type": "webshop",
+    "critical_failure_step": 9,
+    "critical_failure_module": "memory",
+    "step_annotations": [
+      {
+        "step": 9,
+        "memory": {
+          "failure_type": "hallucination",
+          "reasoning": "The  material (polyester&spandex) is never checked. The memory is hallucinated. It should check the product details to see if the material is met."
+        }
+      }
+    ],
+    "shielda_gt": {
+      "layer_1_artifact": "Knowledge Base",
+      "layer_2_exception": "Hallucinated Facts",
+      "error_phase": "RP",
+      "analysis": "Mapped via hard-coded keyword rule."
+    }
+  }
+]
