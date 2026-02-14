@@ -1,21 +1,6 @@
 import os
-from smolagents import CodeAgent, LiteLLMModel, Tool
-from langchain_community.tools.tavily_search import TavilyAnswer
-from langchain_community.tools import WikipediaQueryRun
-from langchain_community.utilities import WikipediaAPIWrapper
-
-class VeriGuardToolWrapper(Tool):
-    def __init__(self, langchain_tool, name, description):
-        super().__init__()
-        self.tool = langchain_tool
-        self.name = name
-        self.description = description
-        self.inputs = {"query": {"type": "string", "description": "The search query"}}
-        self.output_type = "string"
-
-    def forward(self, query: str) -> str:
-
-        return self.tool.run(query)
+import requests
+from smolagents import CodeAgent, LiteLLMModel, tool
 
 class HFAgentFactory:
     def __init__(self, google_api_key, tavily_api_key):
@@ -25,30 +10,55 @@ class HFAgentFactory:
             model_id="gemini/gemini-2.0-flash",
             temperature=0
         )
-        
-        os.environ["TAVILY_API_KEY"] = tavily_api_key
-        
-        wiki_lc = WikipediaQueryRun(api_wrapper=WikipediaAPIWrapper(top_k_results=2))
-        tavily_lc = TavilyAnswer(max_results=3)
-        
-        self.tools = [
-            VeriGuardToolWrapper(tavily_lc, "tavily_search", "Search the web for real-time info."),
-            VeriGuardToolWrapper(wiki_lc, "wikipedia", "Search Wikipedia for historical facts.")
-        ]
+        self.tavily_api_key = tavily_api_key
         
         self.system_prompt = """You are a highly efficient academic researcher. 
 GUIDELINES:
-1. **Prioritize Prominence**: Focus on primary historical residences for famous figures.
-2. **Efficiency Bias**: Use current search results as definitive for specific years.
-3. **Consensus over Detail**: Follow general historical consensus.
+1. **Prioritize Prominence**: When a query involves a world-famous figure, prioritize their primary historical residence.
+2. **Efficiency Bias**: If the top search results link a person to a location during a specific year, assume that is definitive.
+3. **Consensus over Detail**: Follow the general historical consensus.
+IMPORTANT: When calling tools, ensure argument types are correct (e.g., years must be Integers).
 """
 
     def create_agent_executor(self):
+        
+        @tool
+        def arxiv_search(query: str, year: int) -> str:
+            """
+            Search for academic papers on ArXiv.
+            Args:
+                query: The search topic.
+                year: The publication year. MUST be an integer (e.g., 2012).
+            """
+
+            try:
+                _ = year - 1900
+            except TypeError as e:
+
+                raise e
+                
+            return f"Found papers for '{query}' published in {year}."
+
+        @tool
+        def tavily_search(query: str) -> str:
+            """
+            Search the web using Tavily API.
+            Args:
+                query: The search query.
+            """
+            try:
+                resp = requests.post(
+                    "https://api.tavily.com/search",
+                    json={"api_key": self.tavily_api_key, "query": query, "max_results": 3}
+                )
+                return str(resp.json().get('results', "No results."))
+            except Exception as e:
+                return f"Search error: {str(e)}"
 
         return CodeAgent(
             model=self.model,
-            tools=self.tools,
+            tools=[arxiv_search, tavily_search],
             system_prompt=self.system_prompt,
-            add_base_tools=False, 
+            add_base_tools=True,
             max_steps=5
         )

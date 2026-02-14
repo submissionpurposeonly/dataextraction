@@ -3,4 +3,6 @@ langchain-community==0.0.25
 langchain-core==0.1.28
 langchain-google-genai
 tavily-python
+smolagents
+litellm
 python-dotenv
