@@ -1,0 +1,38 @@
+[
+  {
+    "condition": "oracle",
+    "n_cases": 60,
+    "recovery_pct": 75.0,
+    "avg_calls": 7.0,
+    "avg_input_tok": 14390.5,
+    "avg_output_tok": 1859.5,
+    "avg_elapsed_s": 25.3
+  },
+  {
+    "condition": "predicted",
+    "n_cases": 60,
+    "recovery_pct": 66.7,
+    "avg_calls": 9.5,
+    "avg_input_tok": 22131.9,
+    "avg_output_tok": 2610.2,
+    "avg_elapsed_s": 36.9
+  },
+  {
+    "condition": "sr_uncapped",
+    "n_cases": 60,
+    "recovery_pct": 30.0,
+    "avg_calls": 7.5,
+    "avg_input_tok": 11453.6,
+    "avg_output_tok": 1812.4,
+    "avg_elapsed_s": 26.6
+  },
+  {
+    "condition": "sr_budget",
+    "n_cases": 60,
+    "recovery_pct": 21.7,
+    "avg_calls": 3.0,
+    "avg_input_tok": 4266.4,
+    "avg_output_tok": 733.6,
+    "avg_elapsed_s": 10.7
+  }
+]
